@@ -1,0 +1,20 @@
+{
+  "version": "0.0.1",
+  "keywords": "off-beat places, explore places, travel blogs, tour and travel",
+
+  "blogs": [
+
+    {
+      "pageId": "darjeeling-wb-jun-26",
+      "cal": "06-2026",
+      "state": "West Bengal",
+      "category": "Hills",
+      "thumb": "../assets/images/blogs/sittongNamthingJun26.webp",
+      "title": "Darjeeling, WB",
+      "text": "Darjeeling offers some beautiful off-beat places in West Bengal. We have explored few of them.",
+      "ogImage": "https://dasxplore.com/assets/images/blogs/sittongNamthingJun26.webp",
+      "breadcrumb": ["home", "blogs"]
+    }
+
+  ]
+}
