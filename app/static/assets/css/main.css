@@ -1,0 +1,99 @@
+/*---- Header Section > ----*/
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 36px;
+}
+
+/* Navbar Section >> */
+
+#navsearchdiv {
+  padding: 0;
+  margin: 0;
+  max-height: 36px;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: 0.3s;
+  position: relative;
+  padding: 6px 4px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: rgb(42, 40, 93);
+}
+
+.dropend .dropdown-toggle {
+  color: rgb(84, 64, 56);
+  margin-left: 1em;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(42, 40, 93);
+  color: #fff;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropend:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0.125em;
+  margin-left: 0.125em;
+}
+
+@media screen and (min-width: 769px) {
+  .dropend:hover > .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  .dropend .dropdown-toggle {
+    margin-left: 0.5em;
+  }
+}
+
+/*---- Body Section ----*/
+.videoblogs {
+  background-color: rgba(93, 78, 78, 0.212);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+.video-left {
+  background-color: rgb(181, 168, 177);
+}
+.video-right {
+  background-color: rgb(161, 207, 228);
+}
+
+
+/*^^^^^TEST WARNING^^^^^*/
+#devwarning {
+  background-color: rgb(158, 154, 20);
+}
+
+/*---- Footer Section > ----*/
+#footer {
+  background-color: rgb(42, 38, 38);
+}
