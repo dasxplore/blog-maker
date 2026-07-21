@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="BT-Blog | Visual HTML Blog generator">
+    <meta name="description" content="Blog Maker | Visual HTML Blog generator">
 
     <meta name="keywords" content="WYSIWYG editor, blog editor, html blog generator">
     <!--link rel="canonical" href="https://dasxplore.com/"-->
@@ -20,13 +20,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon-16x16.png">
     <link rel="manifest" href="assets/images/logo/site.webmanifest"-->
 
-    <title>BT-Blog | Visual HTML Blog generator</title>
+    <title>Blog Maker | Visual HTML Blog generator</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-icons.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='summernote/summernote-bs5.css') }}" rel="stylesheet">
   </head>
@@ -72,7 +72,7 @@
       <div class="container mt-2 mb-2">
         <form id="pageDetailsForm" class="">
           <div class="mb-3">
-            <label for="blogTitleInp" class="form-label">Page Title</label>
+            <label for="blogTitleInp" class="form-label">Page Title (Optional)</label>
             <input type="text" class="form-control" id="blogTitleInp" aria-describedby="titleHelp">
             <div id="titleHelp" class="form-text">It will appear in the Browser Title</div>
           </div>
@@ -83,7 +83,7 @@
           <div class="mb-3">
             <label for="blogPathInp" class="form-label">Blog Path (Optional)</label>
             <input type="text" class="form-control" id="blogPathInp" aria-describedby="blogPathHelp">
-            <div id="blogPathHelp" class="form-text">Relative path for the blog without domain (ex: blogs/2026/06/darjeeling-wb-jun-26)</div>
+            <div id="blogPathHelp" class="form-text">Relative path for the blog without domain (ex: blogs/2026/07/how-to-use-the-app)</div>
           </div>
           <div class="mb-3">
             <label for="ogImgInp" class="form-label">Open graph image link (og:img) (Optional)</label>
@@ -91,9 +91,9 @@
             <div id="ogImgHelp" class="form-text">Ex: https://dasxplore.com/assets/images/logo/logo.webp.</div>
           </div>
           <div class="mb-3">
-            <label for="keywordsInp" class="form-label">Keywords (Optional)</label>
+            <label for="keywordsInp" class="form-label">Keywords for SEO (Optional)</label>
             <input type="text" class="form-control" id="keywordsInp" aria-describedby="keywordsHelp">
-            <div id="keywordsHelp" class="form-text">Comma separated keywords</div>
+            <div id="keywordsHelp" class="form-text">Comma separated keywords (ex: html editor, wysiwyg editor, blog maker)</div>
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="pageFindInp">
@@ -136,17 +136,16 @@
       <div class="container">
         <footer class="py-3">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Home</a></li>
+            <li class="nav-item"><a target="_blank" href="https://dasxplore.com/#contactSec" class="nav-link px-2 text-dark">Contact Us</a></li>
           </ul>
-          <p class="text-center text-dark">© 2026 BT-Blog</p>
+          <p class="text-center text-dark">© 2026 DasXplore</p>
         </footer>
       </div>
     </section>
 
     <!-- JAVASCRIPT FILES -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <!--script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"></script-->
+    <script src="{{ url_for('static', filename='assets/js001/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js001/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='summernote/summernote-bs5.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js001/main.js') }}"></script>
 

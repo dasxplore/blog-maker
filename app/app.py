@@ -12,9 +12,9 @@ from jinja2 import Template
 app = Flask(__name__)
 
 # global vars
-blog_json_path = Path.cwd() / ".." / "frontend" / "assets" / "data" / "blogs" / "blogs.json"
+blog_json_path = Path.cwd() / ".." / "website" / "assets" / "data" / "blogs" / "blogs.json"
 blog_json_path = blog_json_path.resolve(strict=False)
-blog_html_dir = Path.cwd() / ".." / "frontend" / "blogs"
+blog_html_dir = Path.cwd() / ".." / "website" / "blogs"
 blog_html_dir = blog_html_dir.resolve(strict=False)
 blog_domain = "https://dasxplore.com"
 
@@ -65,6 +65,13 @@ blogHtmlObj = None
 # Get the blog html content from the existing blog
 @app.route('/get-blog', methods=['POST'])
 def get_blog_html():
+    # variables
+    head_desc = ""
+    blog_title = ""
+    canonical_href = ""
+    meta_ogImg = ""
+    meta_keywords = ""
+
     data = request.get_json()
     print(f"Received data: {data}") # debug
     blogId = data.get('id')
@@ -86,15 +93,20 @@ def get_blog_html():
     soup = BeautifulSoup(html_content, 'html.parser')
     # Find the tag by id, then read the 'content' attribute
     meta_tag = soup.find(id="metaDesc")
-    head_desc = meta_tag['content']
+    if meta_tag:
+        head_desc = meta_tag['content']
     meta_tag = soup.find(id="blogTitle")
-    blog_title = meta_tag['content']
+    if meta_tag:
+        blog_title = meta_tag['content']
     meta_tag = soup.find(id="canonicalHref")
-    canonical_href = meta_tag['href']
+    if meta_tag:
+        canonical_href = meta_tag['href']
     meta_tag = soup.find(id="metaOgImg")
-    meta_ogImg = meta_tag['content']
+    if meta_tag:
+        meta_ogImg = meta_tag['content']
     meta_tag = soup.find(id="metaKeywords")
-    meta_keywords = meta_tag['content']
+    if meta_tag:
+        meta_keywords = meta_tag['content']
 
     # Get the blog content
     element = soup.find(id="blogContent")
@@ -110,7 +122,7 @@ def get_blog_html():
             "keywords": meta_keywords
         }
         return jsonify(respJson)
-    return "Element not found", 404
+    return "blogContent Element not found", 404
 
 # Update the blog
 @app.route('/update-blog', methods=['POST'])
@@ -198,25 +210,18 @@ def main():
         help='Port number for the application (default: 5000)'
     )
 
-    # For True/False flags
-    parser.add_argument(
-        '--debug', 
-        action='store_true', # Defaults to False; becomes True if --debug is passed
-        help='Enable Flask debug mode (default: False)'
-    )
-
     parser.add_argument(
         '--json', 
         type=str, 
-        default="../frontend/assets/data/blogs/blogs.json",
-        help='Blog json path (default: ../frontend/assets/data/blogs/blogs.json)'
+        default="../website/assets/data/blogs/blogs.json",
+        help='Blog json path (default: ../website/assets/data/blogs/blogs.json)'
     )
 
     parser.add_argument(
         '--html_dir', 
         type=str, 
-        default="../frontend/blogs",
-        help='Blog html main directory (default: ../../frontend/blogs)'
+        default="../website/blogs",
+        help='Blog html main directory (default: ../website/blogs)'
     )
 
     parser.add_argument(
@@ -224,6 +229,13 @@ def main():
         type=str, 
         default="https://dasxplore.com",
         help='Blog domain without path (default: https://dasxplore.com)'
+    )
+
+    # For True/False flags
+    parser.add_argument(
+        '--debug', 
+        action='store_true', # Defaults to False; becomes True if --debug is passed
+        help='Enable Flask debug mode (default: False)'
     )
 
     # 3. Parse the arguments
