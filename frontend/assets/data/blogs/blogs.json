@@ -1,18 +1,16 @@
 {
   "version": "0.0.1",
-  "keywords": "off-beat places, explore places, travel blogs, tour and travel",
+  "keywords": "html editor, wysiwyg editor, blog maker",
 
   "blogs": [
 
     {
-      "pageId": "darjeeling-wb-jun-26",
-      "cal": "06-2026",
-      "state": "West Bengal",
-      "category": "Hills",
-      "thumb": "../assets/images/blogs/sittongNamthingJun26.webp",
-      "title": "Darjeeling, WB",
-      "text": "Darjeeling offers some beautiful off-beat places in West Bengal. We have explored few of them.",
-      "ogImage": "https://dasxplore.com/assets/images/blogs/sittongNamthingJun26.webp",
+      "pageId": "how-to-use-the-app",
+      "cal": "07-2026",
+      "category": "open-source",
+      "title": "How to use Blog Maker",
+      "text": "In this blog we will try to describe the steps to run the app and create a blog.",
+      "ogImage": "https://dasxplore.com/assets/images/logo/logo.webp",
       "breadcrumb": ["home", "blogs"]
     }
 
