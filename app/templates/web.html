@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='assets/css/bootstrap-icons.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='summernote/summernote-bs5.css') }}" rel="stylesheet">
   </head>
@@ -37,7 +37,7 @@
       <nav id="navbar" class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(82, 54, 125);">
         <div class="container-fluid">
           <div id="logo" class="me-auto">
-            <a class="navbar-brand fw-bold" href="/"><img src="..." alt="" title=""></a>
+            <a class="navbar-brand fw-bold" href="/"><img src="{{ url_for('static', filename='assets/images/android-chrome-192x192.png') }}" alt="BlogMaker" title=""></a>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,6 +47,9 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+              <li><a target="_blank" class="nav-link btn bi-github" href="https://github.com/dasxplore/blog-maker">&nbsp;GitHub</a></li>
             </ul>
           </div>
         </div>
