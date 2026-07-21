@@ -24,9 +24,12 @@ class BlogJson:
     def __init__(self, json_path:str=blog_json_path):
         self.blog_data = {}
         if os.path.exists(json_path):
+            print(f"JSON path: {json_path}")
             self.json_path = json_path
             with open(self.json_path, "r") as jfile:
                 self.blog_data = json.load(jfile)
+        else:
+            print(f"JSON path is not accessible: {json_path}")
 
     def get_blog_data(self, id:str):
         blog_params = {}
