@@ -8,7 +8,12 @@ You can buy me a coffee via [this link](https://www.paypal.com/paypalme/soomnath
 <a href="https://www.paypal.com/paypalme/soomnathsdas"><img src="./docs/images/donate.svg" height="40"></a>
 
 ## 📽️ Demo
-To be added later
+You can click on the below Image or this [Youtube Link](https://www.youtube.com/watch?v=KifuF36ZSkw) to see the demo. Please let me know in the comments, how do you feel about this App. <br>
+
+<a href="https://youtu.be/KifuF36ZSkw">
+  <img src="./docs/images/thumb.png" alt="Description of image" width="50%" />
+</a>
+
 
 ## 💻 Quickstart Guide
 It is easy and quick to setup. All you need is `python` and `git` installed on your system.
