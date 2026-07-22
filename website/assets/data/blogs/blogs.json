@@ -12,6 +12,16 @@
       "text": "In this blog we will try to describe the steps to run the app and create a blog.",
       "ogImage": "https://dasxplore.com/assets/images/logo/logo.webp",
       "breadcrumb": ["home", "blogs"]
+    },
+
+    {
+      "pageId": "about-our-app",
+      "cal": "07-2026",
+      "category": "open-source",
+      "title": "Aboout Our App",
+      "text": "Some description",
+      "ogImage": "https://dasxplore.com/assets/images/logo/logo.webp",
+      "breadcrumb": ["home", "blogs"]
     }
 
   ]
