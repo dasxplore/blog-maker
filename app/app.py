@@ -4,12 +4,14 @@ import json
 from pathlib import Path
 #from urllib.parse import urlparse
 
-from flask import Flask, request, render_template, jsonify, Response, render_template_string
+from flask import Flask, request, render_template, jsonify, Response, render_template_string, send_from_directory
 from bs4 import BeautifulSoup
 from jinja2 import Template
 
 # Flask constructor
 app = Flask(__name__)
+WEBSITE1 = Path(__file__).parent.parent / "website" / "blogs" / "2026" / "07" / "how-to-use-the-app"
+WEBSITE2 = Path(__file__).parent.parent / "website" / "blogs" / "2026" / "07" / "about-our-app"
 
 # global vars
 blog_json_path = Path.cwd() / ".." / "website" / "assets" / "data" / "blogs" / "blogs.json"
@@ -188,6 +190,15 @@ def home():
     if blogJsonObj:
         blog_ids = blogJsonObj.get_blog_ids()
     return render_template("web.html", blog_ids=blog_ids)
+
+# Show sample blogs
+@app.route("/blog1")
+def blog1():
+    return send_from_directory(WEBSITE1, "index.html")
+
+@app.route("/blog2")
+def blog2():
+    return send_from_directory(WEBSITE2, "index.html")
 
 # main function with args
 def main():

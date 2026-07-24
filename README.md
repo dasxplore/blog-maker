@@ -3,6 +3,13 @@
 # 🪶 Blog Maker
 WYSIWYG blog creator based on [summernote](https://summernote.org/). We can edit existing blogs too or we can create new blogs. Also supports meta tag manipulation like `keywords` etc.
 
+#### Live Test
+1. You can do a live test here [https://dasxplore-blog-maker.onrender.com/](https://dasxplore-blog-maker.onrender.com/)
+
+2. Select a blog from drop down & edit as you want. Then save it.
+
+3. See the two blogs (updated) at [https://dasxplore-blog-maker.onrender.com/blog1](https://dasxplore-blog-maker.onrender.com/blog1) and [https://dasxplore-blog-maker.onrender.com/blog2](https://dasxplore-blog-maker.onrender.com/blog2)
+
 ## 💰 Sponsor Me
 You can buy me a coffee via [this link](https://www.paypal.com/paypalme/soomnathsdas) or tap on below image. Thank you 🙏. <br>
 <a href="https://www.paypal.com/paypalme/soomnathsdas"><img src="./docs/images/donate.svg" height="40"></a>
@@ -90,6 +97,13 @@ usage: app.py [--host HOST] [--port PORT] [--json JSON] [--html_dir HTML_DIR] [-
     {{ blog_html }}
   </div>
 </section>
+```
+
+### Docker for quick testing
+
+```bash
+docker build -t sdas92/blog-maker:v0.0.1 -f app/Dockerfile .
+docker run -d -p 5000:5000 --name blog-maker sdas92/blog-maker:v0.0.1
 ```
 
 ### 📚 Tech stack used
