@@ -5,20 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Blog Maker | Visual HTML Blog generator">
+    <meta name="description" content="WYSIWYG blog creator based on summernote. We can edit existing blogs too or we can create new blogs. Also supports meta tag manipulation like keywords etc.">
 
     <meta name="keywords" content="WYSIWYG editor, blog editor, html blog generator">
-    <!--link rel="canonical" href="https://dasxplore.com/"-->
+    <link rel="canonical" href="https://dasxplore-blog-maker.onrender.com/">
 
-    <!--meta property="og:url" content="https://dasxplore.com/">
-    <meta property="og:title" content="DasXplore - Explore the Uniqueness">
-    <meta property="og:image" content="https://dasxplore.com/assets/images/logo/logo.webp">
-    <meta property="og:description" content="Explore the Uniqueness. We try to explore the hidden or off-beat places to discover the nature."-->
+    <meta property="og:url" content="https://dasxplore-blog-maker.onrender.com/">
+    <meta property="og:title" content="Blog Maker | Visual HTML Blog generator">
+    <meta property="og:image" content="https://dasxplore-blog-maker.onrender.com/assets/images/og.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="WYSIWYG blog creator based on summernote. We can edit existing blogs too or we can create new blogs. Also supports meta tag manipulation like keywords etc.">
 
-    <!--link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/logo/site.webmanifest"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='assets/images/site.webmanifest') }}">
 
     <title>Blog Maker | Visual HTML Blog generator</title>
 
@@ -46,6 +48,15 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sample Blogs
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a target="_blank" class="dropdown-item" href="/blog1">Blog1</a></li>
+                  <li><a target="_blank" class="dropdown-item" href="/blog2">Blog2</a></li>
+                </ul>
               </li>
             </ul>
             <ul class="navbar-nav navbar-right">
