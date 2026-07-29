@@ -102,8 +102,8 @@ usage: app.py [--host HOST] [--port PORT] [--json JSON] [--html_dir HTML_DIR] [-
 ### Docker for quick testing
 
 ```bash
-docker build -t sdas92/blog-maker:v0.0.1 -f app/Dockerfile .
-docker run -d -p 5000:5000 --name blog-maker sdas92/blog-maker:v0.0.1
+docker build -t sdas92/blog-maker:v0.0.3 -f app/Dockerfile .
+docker run -d -p 5000:5000 --name blog-maker sdas92/blog-maker:v0.0.3
 ```
 
 ### 📚 Tech stack used
